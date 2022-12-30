@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+
+    <script>
+        function onMenuItemClick(){
+            const toggle = document.getElementById("toggle");
+            if (toggle.checked) {
+                const sidebar = document.getElementsByClassName("sidebar")[0];
+                const navbar = document.getElementsByTagName('nav')[0];
+                //sidebar.setAttribute("style", "width: 10px");
+                //navbar.setAttribute("style", "display: none;");
+                //document.getElementById("MyElement").classList.add('MyClass');
+            }
+
+                   
+        }
+    </script>
+
+</head>
+<body>
+
+    <input id="toggle" type="checkbox"></input>
+
+    <label for="toggle" class="hamburger">
+      <div class="top-bun"></div>
+      <div class="meat"></div>
+      <div class="bottom-bun"></div>
+    </label>    
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="navBar">
+                <li class="navHome" onClick="onMenuItemClick()">
+                    <a href="#home" class="navItem">
+                        <i class="fa-solid fa-house fa-xl"></i>
+                        <span class="navItemName">HOME</span>
+                    </a>
+                </li>
+                <li class="navProjects">
+                    <a href="#projects" class="navItem">                        
+                        <i class="fa-solid fa-file-code fa-xl"></i>
+                        <span class="navItemName">PROJECTS</span>
+                    </a>
+                </li>
+                <li class="navAboutMe">
+                    <a href="#home" class="navItem">
+                        <i class="fa-solid fa-user-tie fa-xl"></i>
+                        <span class="navItemName">ABOUT ME</span>
+                    </a>
+                </li>
+                <li class="navContact">
+                    <a href="#home" class="navItem">
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                        <span class="navItemName">CONTACT</span>
+                    </a>
+                </li>                
+            </ul>
+        </nav>   
+    </aside>
+
+    <div class="wrapper">
+        <header id="home">        
+            <div class="avatarContainer">
+                <img src="avatar.svg" alt="avatar" class="avatarImage">
+            </div>
+            
+            <div class="descriptionContainer">
+                <div class="description">
+                    <h2 style="margin-bottom: 20px"><span>Hello! I'm Dmitry.</span></h2>                   
+                    <p>A <span>Front-End Web Developer</span> passionate about creating interactive applications and experiences on the web.</p>
+                    
+                    <a href="https://www.linkedin.com/in/dmitriy-galikhin-b24b7210b/" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                    </a> 
+                    <a href="https://www.facebook.com/mitko.ivanov.14473426/" target="_blank">
+                        <i class="fa-brands fa-square-facebook fa-xl"></i>
+                    </a> 
+
+                </div>           
+            </div>
+
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+
+        </header>
+
+        <section class="projectsContainer" id="projects">
+            <div class="projectItem" style="flex: 3; background-color: aqua; min-width: 300px">
+                <img src="avatar.svg" alt="avatar">
+                <div class="projectHoverInfo">fgh fghdf ghfd gh</div>
+            </div>
+            <div style="flex: 2; background-color: aqua; min-width: 200px">
+                456
+            </div>                
+        </section>
+
+
+    </div>
+    
+
+
+
+  
+    
+</body>
+</html>
