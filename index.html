@@ -11,24 +11,43 @@
 
 
     <script>
+        function init(){
+            const sidebar = document.getElementsByClassName("sidebar")[0];                                
+            sidebar.classList.toggle("menuHide");            
+        }
+
         function onMenuItemClick(){
             const toggle = document.getElementById("toggle");
             if (toggle.checked) {
                 const sidebar = document.getElementsByClassName("sidebar")[0];
                 const navbar = document.getElementsByTagName('nav')[0];
-                //sidebar.setAttribute("style", "width: 10px");
-                //navbar.setAttribute("style", "display: none;");
-                //document.getElementById("MyElement").classList.add('MyClass');
-            }
-
-                   
+                sidebar.classList.add("menuHide");
+                toggle.checked = false;
+            }                   
         }
+
+        function onClickMenuBurger() {
+            const toggle = document.getElementById("toggle");
+            if (toggle.checked) {
+                const sidebar = document.getElementsByClassName("sidebar")[0];
+                const navbar = document.getElementsByTagName('nav')[0];
+                sidebar.classList.remove("menuHide");                
+            }             
+        }
+
+        window.addEventListener('resize', function(event) {
+            if (window.innerWidth > 960) {
+                const sidebar = document.getElementsByClassName("sidebar")[0];
+                sidebar.classList.remove("menuHide");    
+            }
+        }, true);
+        
     </script>
 
 </head>
-<body>
+<body onload="init()">
 
-    <input id="toggle" type="checkbox"></input>
+    <input id="toggle" type="checkbox" onClick="onClickMenuBurger()"></input>
 
     <label for="toggle" class="hamburger">
       <div class="top-bun"></div>
@@ -36,7 +55,7 @@
       <div class="bottom-bun"></div>
     </label>    
 
-    <aside class="sidebar">
+    <aside class="sidebar menuHide">
         <nav>
             <ul class="navBar">
                 <li class="navHome" onClick="onMenuItemClick()">
@@ -45,7 +64,7 @@
                         <span class="navItemName">HOME</span>
                     </a>
                 </li>
-                <li class="navProjects">
+                <li class="navProjects" onClick="onMenuItemClick()">
                     <a href="#projects" class="navItem">                        
                         <i class="fa-solid fa-file-code fa-xl"></i>
                         <span class="navItemName">PROJECTS</span>

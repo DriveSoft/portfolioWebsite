@@ -211,7 +211,6 @@ header .descriptionContainer .description a:hover {
 
     .sidebar {
         width: 0px;
-
     }  
 
     .sidebar nav {
@@ -340,3 +339,6 @@ Animations
     margin-top: -5px;
 }
 
+.menuHide {
+    width: 0px !important;
+}
