@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Front End Web Developer</title>
 
 
     <script>
         function init(){
             const sidebar = document.getElementsByClassName("sidebar")[0];                                
-            sidebar.classList.toggle("menuHide");            
+            sidebar.classList.remove("menuHide");            
         }
 
         function onMenuItemClick(){
@@ -70,13 +70,13 @@
                         <span class="navItemName">PROJECTS</span>
                     </a>
                 </li>
-                <li class="navAboutMe">
-                    <a href="#home" class="navItem">
+                <li class="navAboutMe" onClick="onMenuItemClick()">
+                    <a href="#aboutme" class="navItem">
                         <i class="fa-solid fa-user-tie fa-xl"></i>
                         <span class="navItemName">ABOUT ME</span>
                     </a>
                 </li>
-                <li class="navContact">
+                <li class="navContact" onClick="onMenuItemClick()">
                     <a href="#home" class="navItem">
                         <i class="fa-solid fa-phone fa-xl"></i>
                         <span class="navItemName">CONTACT</span>
@@ -89,7 +89,7 @@
     <div class="wrapper">
         <header id="home">        
             <div class="avatarContainer">
-                <img src="avatar.svg" alt="avatar" class="avatarImage">
+                <img src="images/avatar.svg" alt="avatar" class="avatarImage">
             </div>
             
             <div class="descriptionContainer">
@@ -100,9 +100,12 @@
                     <a href="https://www.linkedin.com/in/dmitriy-galikhin-b24b7210b/" target="_blank">
                         <i class="fa-brands fa-linkedin fa-xl"></i>
                     </a> 
+                    <a href="https://github.com/DriveSoft/" target="_blank">
+                        <i class="fa-brands fa-square-github fa-xl"></i>
+                    </a> 
                     <a href="https://www.facebook.com/mitko.ivanov.14473426/" target="_blank">
                         <i class="fa-brands fa-square-facebook fa-xl"></i>
-                    </a> 
+                    </a>                     
 
                 </div>           
             </div>
@@ -116,22 +119,111 @@
         </header>
 
         <section class="projectsContainer" id="projects">
-            <div class="projectItem" style="flex: 3; background-color: aqua; min-width: 300px">
-                <img src="avatar.svg" alt="avatar">
-                <div class="projectHoverInfo">fgh fghdf ghfd gh</div>
+            <div class="projectItem smartcitykey">
+                <img src="images/smartcitykey.png" alt="SmartCityKey.com">
+                <div class="projectHoverInfo">
+                    <div class="projectHoverInfoContainer">
+                        <h3 class="title">Smart City Key</h3>
+                        <small>GIS system for the city, includes a tree map, traffic safety analysis and an inventory of urban infrastructure.</small>
+                        <ul class="toolsUsed">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>PostgreSQL</li>
+                            <li>Django</li>
+                        </ul>
+                        <div>
+                            <a href="https://smartcitykey.com/" target="_blank">Live</a>
+                            <a href="https://github.com/DriveSoft/urbangis" target="_blank">GitHub</a>
+                            <a href="https://www.youtube.com/watch?v=GkXyKjiwxPE" target="_blank">Video</a>                            
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style="flex: 2; background-color: aqua; min-width: 200px">
-                456
-            </div>                
+
+            <div class="projectItem react-image-upload-s3">
+                <img src="images/react-image-upload-s3.png" alt="npm package">
+                <div class="projectHoverInfo">
+                    <div class="projectHoverInfoContainer">
+                        <h3 class="title">react-image-upload-s3</h3>
+                        <small>A React component that renders an image input and uploads to an S3 bucket. Optionally can perform resizing and compressing of the image.</small>
+                        <ul class="toolsUsed">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>AWS S3</li>
+                        </ul>
+                        <div>
+                            <a href="https://www.npmjs.com/package/react-image-upload-s3" target="_blank">NPM</a>
+                            <a href="https://github.com/DriveSoft/react-image-upload-s3" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="projectItem myvisualdatabase">
+                <img src="images/myvisualdatabase.png" alt="my visual database">
+                <div class="projectHoverInfo">
+                    <div class="projectHoverInfoContainer">
+                        <h3 class="title">My Visual Database</h3>
+                        <small>A dekstop tool for Windows. A simple development environment allows you to create databases without the help of specialists or the need for programming skills.</small>
+                        <ul class="toolsUsed">
+                            <li>Windows</li>
+                            <li>Delphi XE3</li>
+                            <li>MySQL</li>
+                        </ul>
+                        <div>
+                            <a href="http://myvisualdatabase.com/" target="_blank">Website</a>
+                            <a href="http://myvisualdatabase.com/forum/" target="_blank">Forum</a>
+                            <a href="https://www.youtube.com/watch?v=XffrXjr3qKs" target="_blank">Video</a>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projectItem atomicalarmclock">
+                <img src="images/atomicalarmclock.png" alt="atomic alarm clock">
+                <div class="projectHoverInfo">
+                    <div class="projectHoverInfoContainer">
+                        <h3 class="title">Atomic Alarm Clock</h3>
+                        <small>An application that comes to replace the standard Windows clock. Offers users a bunch of extra utilities not yet available in Microsoft's operating system.</small>
+                        <ul class="toolsUsed">
+                            <li>Windows</li>
+                            <li>Delphi XE3</li>
+                        </ul>
+                        <div>
+                            <a href="http://drive-software.com/atomicalarmclock.html" target="_blank">Website</a>                            
+                        </div>
+                    </div>
+                </div>
+            </div>             
+
         </section>
 
 
+        <section class="aboutmeContainer" id="aboutme">        
+            <div class="avatarContainer">
+                <img src="images/am.jpg" alt="avatar" class="avatarImage">
+            </div>
+            
+            <div class="descriptionContainer">
+                <div class="description">
+                    <h2 style="margin-bottom: 20px"><span>Hello again!</span></h2>                   
+                    <p>My passion for programming began in high school. Since then, my whole life has been about programming and personal projects.</p><br> 
+                    <p>Recently, I completly have changed my stack, and now I focused on gaining experience as a frontend react developer. I am excited to work alongside other amazing programmers and learn so much more!</p>                                    
+
+                </div>           
+            </div>
+        </section>
+
+
+
+        
+        
     </div>
     
-
-
+    <footer style="display: flex; justify-content: center; align-items: center; left:0; width: 100%; height: 80px; background-color: white;">
+        <p>© Dmitry Dev 2023</p>    
+    </footer>
 
   
-    
 </body>
 </html>

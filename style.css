@@ -9,6 +9,13 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 ul {
@@ -33,14 +40,14 @@ body {
 .wrapper {
     max-width: 1140px;
     width: 70vw;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;   
+    min-height: 100vh;   
     width: 100%; 
 }
 
@@ -150,24 +157,59 @@ header .descriptionContainer .description a:hover {
 }
 
 
+
+
 .projectsContainer {
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
     width: 100%;
+    min-height: 100vh; 
 }
 
 .projectsContainer .projectItem {
+    display: flex;
     position: relative;
+    justify-content: center; align-items: center;    
     border-radius: 5px; 
-    height: 300px;    
+    height: 45vh;    
 }
 
-.projectsContainer .projectItem .projectHoverInfo {
-    position: absolute;
+.projectsContainer .projectItem img {
+    max-width: 100%;
+}
+
+.smartcitykey {
+    flex: 5; 
+    background-color: hsl(189, 65%, 92%); 
+    min-width: 400px;
+}
+
+.react-image-upload-s3 {
+    flex: 4; 
+    background-color: hsl(144, 66%, 92%); 
+    min-width: 400px;
+}
+
+.myvisualdatabase {
+    flex: 4; 
+    background-color: hsl(189, 65%, 92%); 
+    min-width: 400px;
+}
+
+.atomicalarmclock {
+    flex: 5; 
+    background-color: hsl(144, 66%, 92%); 
+    min-width: 400px;
+}
+
+.projectHoverInfo {
     display: none;
+    justify-content: center; 
+    align-items: center;
+    position: absolute;    
     left: 0; 
     top: 0; 
     right: 0; 
@@ -177,8 +219,57 @@ header .descriptionContainer .description a:hover {
     border-radius: 5px;   
 }
 
-.projectsContainer .projectItem:hover .projectHoverInfo {
-    display: block;
+.projectHoverInfo .projectHoverInfoContainer {
+    text-align: center; 
+    padding: 0 20px;
+    max-width: 500px;
+}   
+
+.projectHoverInfo .projectHoverInfoContainer .title {
+    font-weight: normal; 
+    margin-bottom: 10px;    
+}
+
+.projectsContainer .toolsUsed {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    font-size: 0.8rem;
+    margin: 20px auto 20px auto;
+    padding: 5px 0;
+    justify-content: space-around;
+  }
+  
+.projectsContainer .toolsUsed li {
+    list-style: none;
+    background-color: white;
+    color: #808080;
+    padding: 5px 10px;
+    margin: 5px;
+    width: auto;
+    border-radius: 50px;
+  }
+
+.projectsContainer .projectItem .projectHoverInfo a {
+    display: inline-block; 
+    padding: 0 10px;
+    height: 38px; 
+    background-color: var(--blue); 
+    border-radius: 3px; 
+    color: white;
+    text-align: center; 
+    line-height: 39px;     
+    margin: 20px 15px 0 0;         
+} 
+
+.projectsContainer .projectItem .projectHoverInfo a:hover {
+    background-color: white;
+    color: var(--blue); 
+}
+
+
+.projectsContainer .projectItem:hover .projectHoverInfo {    
+    display: flex;
     animation: fadeIn 0.2s;
 }
 
@@ -190,44 +281,33 @@ header .descriptionContainer .description a:hover {
     to {
       background: rgba(0,0,0,0.7);
     }
-  }
+}
 
 
 
-@media (max-width: 960px) {
-    header {
-      display: block;
-      
-    }
 
-    header .avatarContainer {    
-        padding: 30px 15px;       
-    }    
+.aboutmeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;   
+    width: 100%;     
+}
+.aboutmeContainer .avatarContainer {    
+    display: flex;
+    justify-content: center;
+    /* padding-right: 25px;        */
+}
+.aboutmeContainer .avatarContainer img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    background-color: var(--lightBlue)
+}
 
-    header .descriptionContainer {
-        margin: 0 auto;  
-        padding: 0;      
-    }
-
-    .sidebar {
-        width: 0px;
-    }  
-
-    .sidebar nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: inline; 
-        position: fixed;
-        top: 5em;
-        right: 5%;
-        margin-left: -2em;
-        margin-top: -45px;
-        width: 2em;
-        height: 45px;
-        z-index: 5;  
-    } 
+.aboutmeContainer .descriptionContainer {
+    padding-left: 70px; 
+    max-width: 500px;        
 }
 
 
@@ -281,25 +361,10 @@ header .descriptionContainer .description a:hover {
 	-webkit-animation-delay:0s; /* Safari 和 Chrome */
 }
 
-
-
-
-
 #toggle {
     display: none;
 }
-
-.hamburger {
-    /* display: inline; 
-    position: fixed;
-    top: 5em;
-    right: 5%;
-    margin-left: -2em;
-    margin-top: -45px;
-    width: 2em;
-    height: 45px;
-    z-index: 5;   */
-}  
+ 
   
 .hamburger div {
     position: relative;
@@ -323,7 +388,7 @@ header .descriptionContainer .description a:hover {
     display: block;
 }
 
-  /**
+/**
 Animations
 **/
 #toggle:checked + .hamburger .top-bun {
@@ -342,3 +407,80 @@ Animations
 .menuHide {
     width: 0px !important;
 }
+
+
+
+@media (max-width: 960px) {
+    header {
+      display: block;      
+    }
+
+    header .avatarContainer {    
+        padding: 30px 15px;       
+    }    
+
+    header .descriptionContainer {
+        margin: 0 auto;  
+        padding: 0;      
+    }
+
+    .aboutmeContainer {
+        display: block;      
+      }
+
+    .aboutmeContainer .avatarContainer {    
+        padding: 30px 15px;       
+    }    
+
+    .aboutmeContainer .descriptionContainer {
+        margin: 0 auto;  
+        padding: 0;      
+    }    
+
+    .sidebar {
+        width: 0px;
+    }  
+
+    .sidebar nav {
+        display: none;
+    }
+
+
+    .projectsContainer .projectItem {
+        height: 380px;    
+    }
+
+    .projectHoverInfo .projectHoverInfoContainer {
+        padding: 0 5px;
+    }      
+
+    .smartcitykey {
+        min-width: 96vw;
+    }
+    
+    .react-image-upload-s3 {
+        min-width: 96vw;
+    }
+    
+    .myvisualdatabase {
+        min-width: 96vw;
+    }
+    
+    .atomicalarmclock {
+        min-width: 96vw;
+    }
+
+
+    .hamburger {
+        display: inline; 
+        position: fixed;
+        top: 5em;
+        right: 10%;
+        margin-left: -2em;
+        margin-top: -55px;
+        width: 2em;
+        height: 45px;
+        z-index: 5;  
+    } 
+}
+
