@@ -94,6 +94,10 @@ header .descriptionContainer .description a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+header .descriptionContainer .description .resumeButton {
+    width: 100px;    
+}
+
 
 .sidebar {
     display: flex;
@@ -182,14 +186,14 @@ header .descriptionContainer .description a:hover {
 }
 
 .smartcitykey {
-    flex: 5; 
-    background-color: hsl(189, 65%, 92%); 
+    flex: 5;     
+    background-color: hsl(42, 66%, 92%); 
     min-width: 400px;
 }
 
 .react-image-upload-s3 {
-    flex: 4; 
-    background-color: hsl(144, 66%, 92%); 
+    flex: 4;      
+    background-color: hsl(269, 66%, 92%); 
     min-width: 400px;
 }
 
@@ -201,7 +205,7 @@ header .descriptionContainer .description a:hover {
 
 .atomicalarmclock {
     flex: 5; 
-    background-color: hsl(144, 66%, 92%); 
+    background-color: hsl(144, 66%, 92%);
     min-width: 400px;
 }
 
