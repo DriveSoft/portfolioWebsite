@@ -178,7 +178,7 @@ header .descriptionContainer .description .resumeButton {
     position: relative;
     justify-content: center; align-items: center;    
     border-radius: 5px; 
-    height: 45vh;    
+    height: 31vh;    
 }
 
 .projectsContainer .projectItem img {
@@ -196,6 +196,14 @@ header .descriptionContainer .description .resumeButton {
     background-color: hsl(269, 66%, 92%); 
     min-width: 400px;
 }
+
+
+.mynotes {
+        
+    background-color: hsl(0, 66%, 92%); 
+    width: 100%;
+}
+
 
 .myvisualdatabase {
     flex: 4; 
@@ -463,6 +471,10 @@ Animations
     }
     
     .react-image-upload-s3 {
+        min-width: 96vw;
+    }
+
+    .mynotes {
         min-width: 96vw;
     }
     
