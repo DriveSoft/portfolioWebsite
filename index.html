@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,400&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Front End Web Developer</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
 
     <script>
-        function init(){
-            const sidebar = document.getElementsByClassName("sidebar")[0];                                
-            sidebar.classList.remove("menuHide");            
+        function init() {
+            const sidebar = document.getElementsByClassName("sidebar")[0];
+            sidebar.classList.remove("menuHide");
         }
 
-        function onMenuItemClick(){
+        function onMenuItemClick() {
             const toggle = document.getElementById("toggle");
             if (toggle.checked) {
                 const sidebar = document.getElementsByClassName("sidebar")[0];
                 const navbar = document.getElementsByTagName('nav')[0];
                 sidebar.classList.add("menuHide");
                 toggle.checked = false;
-            }                   
+            }
         }
 
         function onClickMenuBurger() {
@@ -31,29 +35,30 @@
             if (toggle.checked) {
                 const sidebar = document.getElementsByClassName("sidebar")[0];
                 const navbar = document.getElementsByTagName('nav')[0];
-                sidebar.classList.remove("menuHide");                
-            }             
+                sidebar.classList.remove("menuHide");
+            }
         }
 
-        window.addEventListener('resize', function(event) {
+        window.addEventListener('resize', function (event) {
             if (window.innerWidth > 960) {
                 const sidebar = document.getElementsByClassName("sidebar")[0];
-                sidebar.classList.remove("menuHide");    
+                sidebar.classList.remove("menuHide");
             }
         }, true);
-        
+
     </script>
 
 </head>
+
 <body onload="init()">
 
     <input id="toggle" type="checkbox" onClick="onClickMenuBurger()"></input>
 
     <label for="toggle" class="hamburger">
-      <div class="top-bun"></div>
-      <div class="meat"></div>
-      <div class="bottom-bun"></div>
-    </label>    
+        <div class="top-bun"></div>
+        <div class="meat"></div>
+        <div class="bottom-bun"></div>
+    </label>
 
     <aside class="sidebar menuHide">
         <nav>
@@ -65,7 +70,7 @@
                     </a>
                 </li>
                 <li class="navProjects" onClick="onMenuItemClick()">
-                    <a href="#projects" class="navItem">                        
+                    <a href="#projects" class="navItem">
                         <i class="fa-solid fa-file-code fa-xl"></i>
                         <span class="navItemName">PROJECTS</span>
                     </a>
@@ -75,38 +80,39 @@
                         <i class="fa-solid fa-user-tie fa-xl"></i>
                         <span class="navItemName">ABOUT ME</span>
                     </a>
-                </li>              
+                </li>
             </ul>
-        </nav>   
+        </nav>
     </aside>
 
     <div class="wrapper">
-        <header id="home">        
+        <header id="home">
             <div class="avatarContainer">
                 <img src="images/avatar.svg" alt="avatar" class="avatarImage">
             </div>
-            
+
             <div class="descriptionContainer">
                 <div class="description">
-                    <h2 style="margin-bottom: 20px"><span>Hello! I'm Dmitry.</span></h2>                   
-                    <p>A <span>Front-End Web Developer</span> passionate about creating interactive applications and experiences on the web.</p>
+                    <h2 style="margin-bottom: 20px"><span>Hello! I'm Dmitry.</span></h2>
+                    <p>A <span>Web Developer</span> passionate about creating interactive applications and experiences
+                        on the web.</p>
 
                     <a href="Dmitry-Galihin-resume.pdf" class="resumeButton" target="_blank">
                         Resume
-                    </a> 
+                    </a>
                     <a href="https://www.linkedin.com/in/dmitriy-galikhin-b24b7210b/" target="_blank">
                         <i class="fa-brands fa-linkedin fa-xl"></i>
-                    </a> 
+                    </a>
                     <a href="https://github.com/DriveSoft/" target="_blank">
                         <i class="fa-brands fa-square-github fa-xl"></i>
-                    </a> 
+                    </a>
                     <a href="https://www.facebook.com/mitko.ivanov.14473426/" target="_blank">
                         <i class="fa-brands fa-square-facebook fa-xl"></i>
-                    </a>  
+                    </a>
                     <a href="mailto:drive.soft.mail@gmail.com" target="_blank">
                         <i class="fa-solid fa-envelope fa-xl"></i>
-                    </a>                                         
-                </div>           
+                    </a>
+                </div>
             </div>
 
             <svg class="arrows">
@@ -118,12 +124,38 @@
         </header>
 
         <section class="projectsContainer" id="projects">
+            <div class="projectItem restaurant">
+                <img src="images/restaurant.png" alt="My Notes">
+                <div class="projectHoverInfo">
+                    <div class="projectHoverInfoContainer--restaurant">
+                        <h3 class="title">Restaurant Website</h3>
+                        <small>A full-fledged website for a restaurant network, with the option to order delivery, make
+                            payments, and much more. I was also part of the team for adapting the existing backend of
+                            the application.</small>
+                        <ul class="toolsUsed">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>Cypress</li>
+                            <li>Redux Toolkit</li>
+                            <li>Redux Query</li>
+
+                        </ul>
+                        <div>
+                            <a href="https://godzila.bg/en" target="_blank">Live</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="projectItem smartcitykey">
                 <img src="images/smartcitykey.png" alt="SmartCityKey.com">
                 <div class="projectHoverInfo">
                     <div class="projectHoverInfoContainer">
                         <h3 class="title">Smart City Key</h3>
-                        <small>GIS system for the city, includes a tree map, traffic safety analysis and an inventory of urban infrastructure.</small>
+                        <small>GIS system for the city, includes a tree map, traffic safety analysis and an inventory of
+                            urban infrastructure.</small>
                         <ul class="toolsUsed">
                             <li>React</li>
                             <li>TypeScript</li>
@@ -133,7 +165,7 @@
                         <div>
                             <a href="https://smartcitykey.com/citytree/varna/" target="_blank">Live</a>
                             <a href="https://github.com/DriveSoft/urbangis" target="_blank">GitHub</a>
-                            <a href="https://www.youtube.com/watch?v=GkXyKjiwxPE" target="_blank">Video</a>                            
+                            <a href="https://www.youtube.com/watch?v=GkXyKjiwxPE" target="_blank">Video</a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +176,8 @@
                 <div class="projectHoverInfo">
                     <div class="projectHoverInfoContainer">
                         <h3 class="title">react-image-upload-s3</h3>
-                        <small>A React component that renders an image input and uploads to an S3 bucket. Optionally can perform resizing and compressing of the image.</small>
+                        <small>A React component that renders an image input and uploads to an S3 bucket. Optionally can
+                            perform resizing and compressing of the image.</small>
                         <ul class="toolsUsed">
                             <li>React</li>
                             <li>TypeScript</li>
@@ -156,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
 
 
 
@@ -164,19 +197,20 @@
                 <img src="images/mynotes.png" alt="My Notes">
                 <div class="projectHoverInfo">
                     <div class="projectHoverInfoContainer">
-                        <h3 class="title">My Notes (still in progress)</h3>
-                        <small>Pet project. Application for personal notes that mimics the user interface of VSCode. Just for fun :)</small>
+                        <h3 class="title">My Notes</h3>
+                        <small>Just for fun. Application for personal notes that mimics the user interface of VSCode.
+                            Just for fun :)</small>
                         <ul class="toolsUsed">
                             <li>React</li>
                             <li>TypeScript</li>
                         </ul>
                         <div>
                             <a href="https://dmitryweb.dev/portfolio/mynotes/" target="_blank">Live</a>
-                            <a href="https://github.com/DriveSoft/mynotes" target="_blank">GitHub</a>                           
+                            <a href="https://github.com/DriveSoft/mynotes" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
 
 
 
@@ -185,7 +219,8 @@
                 <div class="projectHoverInfo">
                     <div class="projectHoverInfoContainer">
                         <h3 class="title">My Visual Database</h3>
-                        <small>A dekstop tool for Windows. A development environment allows you to create database app without the help of specialists or the need for programming skills.</small>
+                        <small>A dekstop tool for Windows. A development environment allows you to create database app
+                            without the help of specialists or the need for programming skills.</small>
                         <ul class="toolsUsed">
                             <li>Windows</li>
                             <li>Delphi XE3</li>
@@ -194,7 +229,7 @@
                         <div>
                             <a href="http://myvisualdatabase.com/" target="_blank">Website</a>
                             <a href="http://myvisualdatabase.com/forum/" target="_blank">Forum</a>
-                            <a href="https://www.youtube.com/watch?v=XffrXjr3qKs" target="_blank">Video</a>                            
+                            <a href="https://www.youtube.com/watch?v=XffrXjr3qKs" target="_blank">Video</a>
                         </div>
                     </div>
                 </div>
@@ -205,46 +240,51 @@
                 <div class="projectHoverInfo">
                     <div class="projectHoverInfoContainer">
                         <h3 class="title">Atomic Alarm Clock</h3>
-                        <small>An application that comes to replace the standard Windows clock. Offers users a bunch of extra utilities not yet available in Microsoft's operating system.</small>
+                        <small>An application that comes to replace the standard Windows clock. Offers users a bunch of
+                            extra utilities not yet available in Microsoft's operating system.</small>
                         <ul class="toolsUsed">
                             <li>Windows</li>
                             <li>Delphi XE3</li>
                         </ul>
                         <div>
-                            <a href="http://drive-software.com/atomicalarmclock.html" target="_blank">Website</a>                            
+                            <a href="http://drive-software.com/atomicalarmclock.html" target="_blank">Website</a>
                         </div>
                     </div>
                 </div>
-            </div>             
+            </div>
 
         </section>
 
 
-        <section class="aboutmeContainer" id="aboutme">        
+        <section class="aboutmeContainer" id="aboutme">
             <div class="avatarContainer">
                 <img src="images/am.jpg" alt="avatar" class="avatarImage">
             </div>
-            
+
             <div class="descriptionContainer">
                 <div class="description">
-                    <h2 style="margin-bottom: 20px"><span>Hello again!</span></h2>                   
-                    <p>My passion for programming began in high school. Since then, my whole life has been about programming and personal projects.</p><br> 
-                    <p>Recently, I completely have changed my stack, and now I focused on gaining experience as a frontend react developer. I am excited to work alongside other amazing programmers and learn so much more!</p>                                    
+                    <h2 style="margin-bottom: 20px"><span>Hello again!</span></h2>
+                    <p>My passion for programming began in high school. Since then, my whole life has been about
+                        programming.</p><br>
+                    <p>Recently, I completely have changed my stack, and now I focused on gaining experience as a web
+                        developer. I am excited to work alongside other amazing programmers and learn so much more!</p>
 
-                </div>           
+                </div>
             </div>
         </section>
 
 
 
-        
-        
+
+
     </div>
-    
-    <footer style="display: flex; justify-content: center; align-items: center; left:0; width: 100%; height: 80px; background-color: white;">
-        <p>© Dmitry Dev 2023</p>    
+
+    <footer
+        style="display: flex; justify-content: center; align-items: center; left:0; width: 100%; height: 80px; background-color: white;">
+        <p>© Dmitry Dev 2023</p>
     </footer>
 
-  
+
 </body>
+
 </html>
